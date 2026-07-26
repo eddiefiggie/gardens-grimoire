@@ -1,5 +1,11 @@
 {
   "schemaVersion": 1,
-  "recaps": [],
-  "noticed": []
+  "recaps": [
+    { "safeAsOf": 0, "text": "In the last year of Emperor Kellanved's reign, twelve-year-old Ganoes Paran stands on the wall of Mock's Hold above Malaz City. He speaks with the commander of the Bridgeburners, who is uneasy about the purge of the Mouse Quarter and about Surly — now calling herself Laseen — and her laws against sorcery. Paran declares he will be a soldier." },
+    { "safeAsOf": 1, "text": "Seven years later, in Itko Kan, the old woman Rigga seizes a young fishergirl and speaks a prophecy before she is killed. Two figures — Cotillion and Ammanas — loose seven hounds that destroy a Malazan cavalry regiment. Adjunct Lorn investigates the massacre and commissions the newly arrived Ganoes Paran onto her staff to hunt mages. Paran is brought before the Empress Laseen and meets his sister Tavore; the fishergirl, now called Sorry, enlists in the Marines." }
+  ],
+  "noticed": [
+    { "safeAsOf": 0, "text": "The Bridgeburner commander insists Laseen's laws against sorcery 'will not survive Kellanved's return' — the Emperor's return is spoken of as a live possibility, not a settled fact." },
+    { "safeAsOf": 1, "text": "The fishergirl deliberately takes the name 'Sorry' and asks specifically for Dujek Onearm's Host; the recruiter notices the mud on her boots is the wrong colour for the region and that it hasn't rained there in days." }
+  ]
 }
