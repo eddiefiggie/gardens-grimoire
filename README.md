@@ -13,9 +13,11 @@ scoped to the reader's current chapter. The reader never misses atmosphere and s
 comfortable not-yet-knowing.
 
 ## Status
-In build. Implementation-ready plan →
+**Built** (build `07252026.1`). All 8 units (U1–U8) implemented, 42 unit tests green,
+browser visual pass done, Prologue+Ch.1 dry-run gate passed (app seeded with real,
+position-safe content). Implementation-ready plan →
 `docs/plans/2026-07-25-001-feat-gardens-grimoire-reading-companion-plan.md`.
-Building U1–U8 (see plan). No-build static site under `web/`.
+**Not yet deployed** — needs a GitHub remote + `gh api … pages -f build_type=workflow`.
 
 ## Build & run
 No build step. Serve `web/` and open it:
