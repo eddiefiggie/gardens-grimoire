@@ -45,7 +45,13 @@ body {
 .wrap {
   max-width: var(--measure);
   margin: 0 auto;
-  padding: 1.25rem 1.1rem 4rem;
+  /* Pad inside the iOS safe area (Dynamic Island, home bar, landscape corners);
+     the original padding stays as the floor on non-notched screens. Requires
+     viewport-fit=cover on the viewport meta. */
+  padding-top: max(1.25rem, env(safe-area-inset-top));
+  padding-right: max(1.1rem, env(safe-area-inset-right));
+  padding-bottom: max(4rem, env(safe-area-inset-bottom));
+  padding-left: max(1.1rem, env(safe-area-inset-left));
 }
 
 /* ---------- Header ---------- */
@@ -256,12 +262,14 @@ body {
 .capture .row { display: flex; gap: 0.5rem; align-items: center; margin-top: 0.5rem; flex-wrap: wrap; }
 .capture select, .capture input[type="text"] {
   font-family: var(--serif);
+  font-size: 16px; /* >= 16px so iOS Safari doesn't zoom on focus */
   padding: 0.35rem 0.5rem;
   border: 1px solid var(--rule);
   border-radius: var(--radius);
   background: var(--panel);
   color: var(--ink);
 }
+.capture textarea { font-size: max(1rem, 16px); } /* same anti-zoom floor */
 
 /* ---------- Data controls ---------- */
 .data-controls {
@@ -272,7 +280,17 @@ body {
   padding-top: 1rem;
   border-top: 1px solid var(--rule);
 }
-.data-controls .danger { border-color: var(--accent); color: var(--accent); }
+.data-controls { row-gap: 0.5rem; }
+/* Outline danger (the Reset button): accent text on transparent.
+   Scoped to .secondary so it does NOT recolor the FILLED danger confirm
+   ("Reset anyway"), which keeps nav-btn's light text on the accent fill. */
+.data-controls .secondary.danger { border-color: var(--accent); color: var(--accent); }
+/* The status line / Reset two-step affordance drops to its own full-width row and
+   wraps its buttons, so it never pushes past the viewport on a narrow phone. */
+#dc-status { flex-basis: 100%; display: flex; flex-wrap: wrap; gap: 0.4rem 0.5rem; align-items: center; }
+
+/* Long source slugs, pasted URLs, or unbroken words can't force a wide line. */
+.entry .body, .cite-src, .layer, .state, .recap-block, .feed li { overflow-wrap: anywhere; }
 
 /* ---------- Footer ---------- */
 .site-foot {
@@ -287,7 +305,13 @@ body {
 /* ---------- Responsive: one-handed beside a book ---------- */
 @media (max-width: 600px) {
   html, body { font-size: 17px; }
-  .wrap { padding: 1rem 0.85rem 3.5rem; }
+  .wrap {
+    /* keep the safe-area floors on mobile (this is where the insets matter most) */
+    padding-top: max(1rem, env(safe-area-inset-top));
+    padding-right: max(0.85rem, env(safe-area-inset-right));
+    padding-bottom: max(3.5rem, env(safe-area-inset-bottom));
+    padding-left: max(0.85rem, env(safe-area-inset-left));
+  }
   .site-head h1 { font-size: 1.6rem; }
   .tab { padding: 0.5rem 0.6rem; font-size: 0.95rem; }
   .nav-btn, .tab { min-height: 44px; } /* comfortable touch targets */
