@@ -3,14 +3,9 @@
   "entries": [
     { "id": "seed-p0-a", "position": 0, "timestamp": 1690000000000, "refined": true,
       "text": "Ganoes Paran — twelve years old; while his father discusses trade at Mock's Hold, he stands on the wall and tells the Bridgeburner commander he means to become a soldier.",
-      "source": "Prologue", "provenance": "who's the kid on the wall at the very start?" },
-    { "id": "seed-c1-a", "position": 1, "timestamp": 1690000100000, "refined": true,
-      "text": "Sorry — a young fishergirl of Itko Kan who, after the old woman Rigga's prophecy and an encounter with two shadow-clad figures, takes the name Sorry and enlists in the Malazan Marines.",
-      "source": "Chapter_1", "provenance": "who is Sorry and why does the book linger on her?" }
+      "source": "Prologue", "provenance": "who's the kid on the wall at the very start?" }
   ],
   "questions": [
-    { "id": "seed-q-c1", "position": 1, "text": "Who are the two figures that loose the hounds on the road?",
-      "unlocksAt": 1, "answer": "On the road they reveal themselves as Cotillion and Ammanas.", "source": "Chapter_1" },
     { "id": "seed-q-p0", "position": 0, "text": "Will Kellanved really return, as the commander implies?",
       "unlocksAt": null }
   ]

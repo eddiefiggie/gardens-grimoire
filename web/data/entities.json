@@ -2,8 +2,7 @@
   "schemaVersion": 1,
   "entities": [
     { "id": "ganoes-paran", "name": "Ganoes Paran", "type": "person", "layers": [
-      { "safeAsOf": 0, "text": "Twelve years old; while his father discusses trade at Mock's Hold, he stands on the wall above the Mouse Quarter and tells the commander of the Bridgeburners he means to become a soldier.", "source": "Prologue" },
-      { "safeAsOf": 1, "text": "Now a lieutenant, new to his command and lately of Unta. At the Itko Kan massacre the Adjunct commissions him to her staff, sends him to investigate the vanished fisher family, and he is later led before the Empress and encounters his sister Tavore.", "source": "Chapter_1" }
+      { "safeAsOf": 0, "text": "Twelve years old; while his father discusses trade at Mock's Hold, he stands on the wall above the Mouse Quarter and tells the commander of the Bridgeburners he means to become a soldier.", "source": "Prologue" }
     ] },
     { "id": "mocks-hold", "name": "Mock's Hold", "type": "place", "layers": [
       { "safeAsOf": 0, "text": "A hold above Malaz City, run by a Fist; from its wall one looks out over the Mouse Quarter.", "source": "Prologue" }
@@ -18,8 +17,7 @@
       { "safeAsOf": 0, "text": "The empire's First Sword, said to have died at the city of Y'Ghatan.", "source": "Prologue" }
     ] },
     { "id": "laseen", "name": "Laseen", "type": "person", "layers": [
-      { "safeAsOf": 0, "text": "Formerly called Surly; she has changed her name to Laseen — 'Thronemaster' in the Napan tongue. She is flanked by Claw acolytes and has made laws against sorcery.", "source": "Prologue" },
-      { "safeAsOf": 1, "text": "Now Empress. She receives Paran in her throne room at Unta, reached through the Imperial Warren.", "source": "Chapter_1" }
+      { "safeAsOf": 0, "text": "Formerly called Surly; she has changed her name to Laseen — 'Thronemaster' in the Napan tongue. She is flanked by Claw acolytes and has made laws against sorcery.", "source": "Prologue" }
     ] },
     { "id": "the-claw", "name": "The Claw", "type": "politics", "layers": [
       { "safeAsOf": 0, "text": "Acolytes who flank Surly (Laseen).", "source": "Prologue" }
@@ -29,33 +27,6 @@
     ] },
     { "id": "napan", "name": "Napan", "type": "culture", "layers": [
       { "safeAsOf": 0, "text": "A people whose tongue gives the word 'Laseen' its meaning, 'Thronemaster.'", "source": "Prologue" }
-    ] },
-    { "id": "sorry", "name": "Sorry", "type": "person", "layers": [
-      { "safeAsOf": 1, "text": "A young fishergirl of Itko Kan. After the old woman Rigga's prophecy and an encounter with two shadow-clad figures, she takes the name Sorry and enlists in the Malazan Marines, requesting a place in High Fist Dujek Onearm's Host.", "source": "Chapter_1" }
-    ] },
-    { "id": "rigga", "name": "Rigga", "type": "person", "layers": [
-      { "safeAsOf": 1, "text": "An old woman at Itko Kan who seizes the fishergirl and speaks a prophecy over her before a passing rider kills her.", "source": "Chapter_1" }
-    ] },
-    { "id": "cotillion", "name": "Cotillion", "type": "person", "layers": [
-      { "safeAsOf": 1, "text": "One of two figures on the Itko Kan road who take an interest in the fishergirl; the taller, swathed in black.", "source": "Chapter_1" }
-    ] },
-    { "id": "ammanas", "name": "Ammanas", "type": "person", "layers": [
-      { "safeAsOf": 1, "text": "The shorter of the two figures on the road; he raises his arms, a darkness descends, and seven hounds appear which he sends tearing after the cavalry.", "source": "Chapter_1" }
-    ] },
-    { "id": "hounds", "name": "The Hounds", "type": "thing", "layers": [
-      { "safeAsOf": 1, "text": "Seven hounds loosed on the Itko Kan road; they destroy the entire 19th Regiment of the Itko Kanese 8th Cavalry.", "source": "Chapter_1" }
-    ] },
-    { "id": "adjunct-lorn", "name": "Adjunct Lorn", "type": "person", "layers": [
-      { "safeAsOf": 1, "text": "The Adjunct to the Empress. She investigates the Itko Kan massacre, commissions Ganoes Paran onto her staff, and hunts mages as the will of the Empress.", "source": "Chapter_1" }
-    ] },
-    { "id": "itko-kan", "name": "Itko Kan", "type": "place", "layers": [
-      { "safeAsOf": 1, "text": "A province where the fishergirl lives and where a Malazan cavalry regiment is wiped out.", "source": "Chapter_1" }
-    ] },
-    { "id": "topper", "name": "Topper", "type": "person", "layers": [
-      { "safeAsOf": 1, "text": "The Empress's chief Claw assassin; he leads Paran through the Imperial Warren to the Adjunct.", "source": "Chapter_1" }
-    ] },
-    { "id": "tavore", "name": "Tavore", "type": "person", "layers": [
-      { "safeAsOf": 1, "text": "Ganoes Paran's sister, whom he encounters at the family estate.", "source": "Chapter_1" }
     ] }
   ]
 }
