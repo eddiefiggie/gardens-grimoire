@@ -26,6 +26,8 @@ A staging note that has graduated into cited, spoiler-safe knowledge: rewritten 
 ### Held question
 A reader's logged question that cannot yet be answered without crossing the Marker, so it is stored to surface later. The position where it becomes answerable is recorded but stays hidden until it fires — the reader is never shown how far ahead the answer lies.
 
+A Held question accompanies a [[Refined entry]] rather than replacing it: the note that raised it still gets refined (recording that the source does not yet answer it), so nothing is left as an unrefined raw note.
+
 ## The refine workflow
 
 ### Refine
