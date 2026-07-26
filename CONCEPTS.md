@@ -25,3 +25,11 @@ A staging note that has graduated into cited, spoiler-safe knowledge: rewritten 
 
 ### Held question
 A reader's logged question that cannot yet be answered without crossing the Marker, so it is stored to surface later. The position where it becomes answerable is recorded but stays hidden until it fires — the reader is never shown how far ahead the answer lies.
+
+## The refine workflow
+
+### Refine
+The named process that promotes a reader's raw [[Staging note]]s into cited, position-safe knowledge — Refined entries, plus Held questions for what the source does not yet cover. Refining draws only on the Authority and asserts nothing it does not support.
+
+### Authority
+The single sanctioned source a refinement run may read for a given Position: that position's own per-chapter reference page, and nothing else. The main whole-book summary and any outbound entity links are off-limits, because they reach past the Marker — so the Authority is what keeps sourcing inside the Spoiler firewall rather than becoming a way around it.
