@@ -28,6 +28,28 @@ test("buildExport carries schemaVersion, marker header, staging, and journal", f
   assert.strictEqual(b.journal.entries.length, 1);
 });
 
+test("buildMarkdown: readable doc with header, sections, chapter names, and spoiler line", function () {
+  var app = fakeApp();
+  app.data.positions = [
+    { ord: 1, name: "Chapter 1" },
+    { ord: 7, name: "Chapter 7" }
+  ];
+  var md = DC.buildMarkdown(app, 0);
+  assert.ok(/^# Gardens Grimoire — Journal Export/.test(md), "has a title");
+  assert.ok(/\*\*Currently reading:\*\* Chapter 7/.test(md), "marker resolves to a chapter name");
+  assert.ok(/Spoiler firewall/.test(md), "carries the spoiler-firewall notice");
+  assert.ok(/## Refined entries \(1\)/.test(md), "counts refined entries");
+  assert.ok(/### Chapter 1/.test(md) && /refined/.test(md), "refined entry uses its chapter name");
+  assert.ok(/## Raw notes — awaiting refinement \(1\)/.test(md), "counts raw notes");
+  assert.ok(/raw note/.test(md), "raw note text present");
+  assert.ok(/## Held questions \(0\)/.test(md), "questions section present even when empty");
+});
+
+test("buildMarkdown: unmapped positions fall back to an ordinal label", function () {
+  var md = DC.buildMarkdown(fakeApp(), 0); // no positions provided
+  assert.ok(/Position 7/.test(md), "marker falls back to Position N when name unknown");
+});
+
 test("importBundle: a well-formed current bundle imports as success with a count", function () {
   var raw = JSON.stringify(DC.buildExport(fakeApp(), 1));
   var r = DC.importBundle(raw);

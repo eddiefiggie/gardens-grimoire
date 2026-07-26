@@ -13,8 +13,8 @@ scoped to the reader's current chapter. The reader never misses atmosphere and s
 comfortable not-yet-knowing.
 
 ## Status
-**LIVE** (build `07252026.2` — mobile/narrow-viewport hardened) at **https://eddiefiggie.github.io/gardens-grimoire/**
-· repo **https://github.com/eddiefiggie/gardens-grimoire**. All 8 units (U1–U8), 42 unit
+**LIVE** (build `07262026.1` — Markdown journal export added) at **https://eddiefiggie.github.io/gardens-grimoire/**
+· repo **https://github.com/eddiefiggie/gardens-grimoire**. All 8 units (U1–U8), 44 unit
 tests green, browser visual pass done, dry-run gate passed. Seeded with the **Prologue
 only** (Chapter 1 onward = your own reading sessions). Implementation-ready plan →
 `docs/plans/2026-07-25-001-feat-gardens-grimoire-reading-companion-plan.md`.

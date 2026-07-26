@@ -20,6 +20,94 @@
     };
   }
 
+  /* -------- markdown export (human-readable; not re-importable) -------- */
+
+  function posLabel(positions, ord) {
+    positions = Array.isArray(positions) ? positions : [];
+    for (var i = 0; i < positions.length; i++) {
+      if (positions[i] && positions[i].ord === ord) return positions[i].name;
+    }
+    return "Position " + ord;
+  }
+
+  // Deterministic given ts (UTC) so the pure function stays test-stable.
+  function fmtStamp(ts) {
+    try { return new Date(ts).toISOString().replace("T", " ").slice(0, 16) + " UTC"; }
+    catch (e) { return String(ts); }
+  }
+
+  function byNewest(a, b) { return (b.timestamp || 0) - (a.timestamp || 0); }
+
+  // Build a readable Markdown document from the export bundle. `positions` lets
+  // us print chapter names instead of bare ordinals; falls back gracefully.
+  // Human/Claude-facing only — the JSON export remains the machine round-trip.
+  function buildMarkdown(app, now, positions) {
+    var bundle = buildExport(app, now);
+    positions = positions || (app && app.data && app.data.positions) || [];
+    var markerName = posLabel(positions, bundle.marker);
+    var refined = (bundle.journal.entries || []).slice().sort(byNewest);
+    var raw = (bundle.staging || []).slice().sort(byNewest);
+    var questions = (bundle.journal.questions || []).slice();
+
+    var L = [];
+    L.push("# Gardens Grimoire — Journal Export");
+    L.push("");
+    L.push("- **Exported:** " + fmtStamp(now));
+    L.push("- **Currently reading:** " + markerName);
+    L.push("- **Schema version:** " + bundle.schemaVersion);
+    L.push("");
+    L.push("> Spoiler firewall: nothing above _" + markerName + "_ appears in this file.");
+    L.push("");
+
+    L.push("## Refined entries (" + refined.length + ")");
+    L.push("");
+    if (!refined.length) {
+      L.push("_None yet._");
+      L.push("");
+    } else {
+      refined.forEach(function (e) {
+        L.push("### " + posLabel(positions, e.position));
+        L.push("");
+        L.push(e.text || "");
+        L.push("");
+        if (e.source) L.push("- _Source:_ " + e.source);
+        if (e.provenance) L.push("- _Your original note:_ " + e.provenance);
+        L.push("- _Refined · " + fmtStamp(e.timestamp) + "_");
+        L.push("");
+      });
+    }
+
+    L.push("## Raw notes — awaiting refinement (" + raw.length + ")");
+    L.push("");
+    if (!raw.length) {
+      L.push("_None._");
+      L.push("");
+    } else {
+      raw.forEach(function (n) {
+        L.push("### " + posLabel(positions, n.position));
+        L.push("");
+        L.push(n.text || "");
+        L.push("");
+        L.push("- _Raw note · " + fmtStamp(n.timestamp) + "_");
+        L.push("");
+      });
+    }
+
+    L.push("## Held questions (" + questions.length + ")");
+    L.push("");
+    if (!questions.length) {
+      L.push("_None._");
+      L.push("");
+    } else {
+      questions.forEach(function (q) {
+        L.push("- " + (q.text || "") + "  \n  _held at " + posLabel(positions, q.position) + "_");
+      });
+      L.push("");
+    }
+
+    return L.join("\n");
+  }
+
   function importBundle(raw) {
     var parsed;
     try { parsed = typeof raw === "string" ? JSON.parse(raw) : raw; }
@@ -80,18 +168,29 @@
     app.renderAll();
   }
 
-  function downloadExport(app) {
-    var bundle = buildExport(app, Date.now());
-    var blob = new Blob([JSON.stringify(bundle, null, 2)], { type: "application/json" });
+  function triggerDownload(filename, blob) {
     var url = URL.createObjectURL(blob);
     var a = document.createElement("a");
-    var stamp = new Date().toISOString().slice(0, 10);
     a.href = url;
-    a.download = "gardens-grimoire-export-" + stamp + ".json";
+    a.download = filename;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
     setTimeout(function () { URL.revokeObjectURL(url); }, 0);
+  }
+
+  function downloadExport(app) {
+    var bundle = buildExport(app, Date.now());
+    var blob = new Blob([JSON.stringify(bundle, null, 2)], { type: "application/json" });
+    var stamp = new Date().toISOString().slice(0, 10);
+    triggerDownload("gardens-grimoire-export-" + stamp + ".json", blob);
+  }
+
+  function downloadMarkdown(app) {
+    var md = buildMarkdown(app, Date.now(), app.data && app.data.positions);
+    var blob = new Blob([md], { type: "text/markdown" });
+    var stamp = new Date().toISOString().slice(0, 10);
+    triggerDownload("gardens-grimoire-journal-" + stamp + ".md", blob);
   }
 
   function doReset(app) {
@@ -116,6 +215,7 @@
     wrap.className = "data-controls";
     wrap.innerHTML =
       '<button class="nav-btn secondary" id="dc-export">Export</button>' +
+      '<button class="nav-btn secondary" id="dc-export-md">Export MD</button>' +
       '<button class="nav-btn secondary" id="dc-import">Import</button>' +
       '<button class="nav-btn secondary danger" id="dc-reset">Reset</button>' +
       '<input type="file" id="dc-file" accept="application/json,.json" style="display:none">' +
@@ -127,7 +227,12 @@
 
     wrap.querySelector("#dc-export").onclick = function () {
       downloadExport(app);
-      setStatus(status, "Exported your journal to a file.");
+      setStatus(status, "Exported your journal to a JSON file (re-importable).");
+    };
+
+    wrap.querySelector("#dc-export-md").onclick = function () {
+      downloadMarkdown(app);
+      setStatus(status, "Exported a readable Markdown copy of your journal.");
     };
 
     wrap.querySelector("#dc-import").onclick = function () { fileInput.click(); };
@@ -165,6 +270,7 @@
 
   var api = {
     buildExport: buildExport,
+    buildMarkdown: buildMarkdown,
     importBundle: importBundle,
     mergeById: mergeById,
     reconcile: reconcile,
