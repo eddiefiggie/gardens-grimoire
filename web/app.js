@@ -130,7 +130,11 @@
           if (!res.ok) throw new Error(name + ".json (" + res.status + ")");
           return res.json();
         })
-        .then(function (json) { App.data[name] = json; });
+        .then(function (json) {
+          App.data[name] = window.Schema
+            ? Schema.normalize(Schema.migrate(json, name), name)
+            : json;
+        });
     }));
   }
 

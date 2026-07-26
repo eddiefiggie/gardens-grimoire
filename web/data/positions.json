@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "positions": [
+    { "ord": 0,  "name": "Prologue",   "book": null,                             "slug": "Prologue" },
+    { "ord": 1,  "name": "Chapter 1",  "book": "Book One: Pale",                 "slug": "Chapter_1" },
+    { "ord": 2,  "name": "Chapter 2",  "book": "Book One: Pale",                 "slug": "Chapter_2" },
+    { "ord": 3,  "name": "Chapter 3",  "book": "Book One: Pale",                 "slug": "Chapter_3" },
+    { "ord": 4,  "name": "Chapter 4",  "book": "Book One: Pale",                 "slug": "Chapter_4" },
+    { "ord": 5,  "name": "Chapter 5",  "book": "Book Two: Darujhistan",          "slug": "Chapter_5" },
+    { "ord": 6,  "name": "Chapter 6",  "book": "Book Two: Darujhistan",          "slug": "Chapter_6" },
+    { "ord": 7,  "name": "Chapter 7",  "book": "Book Two: Darujhistan",          "slug": "Chapter_7" },
+    { "ord": 8,  "name": "Chapter 8",  "book": "Book Three: The Mission",        "slug": "Chapter_8" },
+    { "ord": 9,  "name": "Chapter 9",  "book": "Book Three: The Mission",        "slug": "Chapter_9" },
+    { "ord": 10, "name": "Chapter 10", "book": "Book Three: The Mission",        "slug": "Chapter_10" },
+    { "ord": 11, "name": "Chapter 11", "book": "Book Four: Assassins",           "slug": "Chapter_11" },
+    { "ord": 12, "name": "Chapter 12", "book": "Book Four: Assassins",           "slug": "Chapter_12" },
+    { "ord": 13, "name": "Chapter 13", "book": "Book Four: Assassins",           "slug": "Chapter_13" },
+    { "ord": 14, "name": "Chapter 14", "book": "Book Five: The Gadrobi Hills",   "slug": "Chapter_14" },
+    { "ord": 15, "name": "Chapter 15", "book": "Book Five: The Gadrobi Hills",   "slug": "Chapter_15" },
+    { "ord": 16, "name": "Chapter 16", "book": "Book Five: The Gadrobi Hills",   "slug": "Chapter_16" },
+    { "ord": 17, "name": "Chapter 17", "book": "Book Six: The City of Blue Fire", "slug": "Chapter_17" },
+    { "ord": 18, "name": "Chapter 18", "book": "Book Six: The City of Blue Fire", "slug": "Chapter_18" },
+    { "ord": 19, "name": "Chapter 19", "book": "Book Six: The City of Blue Fire", "slug": "Chapter_19" },
+    { "ord": 20, "name": "Chapter 20", "book": "Book Seven: The Fête",           "slug": "Chapter_20" },
+    { "ord": 21, "name": "Chapter 21", "book": "Book Seven: The Fête",           "slug": "Chapter_21" },
+    { "ord": 22, "name": "Chapter 22", "book": "Book Seven: The Fête",           "slug": "Chapter_22" },
+    { "ord": 23, "name": "Chapter 23", "book": "Book Seven: The Fête",           "slug": "Chapter_23" },
+    { "ord": 24, "name": "Chapter 24", "book": "Book Seven: The Fête",           "slug": "Chapter_24" },
+    { "ord": 25, "name": "Epilogue",   "book": null,                             "slug": "Epilogue" }
+  ]
+}
