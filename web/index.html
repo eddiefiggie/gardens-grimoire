@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>Gardens Grimoire — a spoiler-safe reading companion</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="site-head">
+      <h1>Gardens Grimoire</h1>
+      <p class="subtitle">A spoiler-safe reading companion for <em>Gardens of the Moon</em></p>
+      <p class="ornament">❧ ❧ ❧</p>
+    </header>
+
+    <div id="marker-bar"></div>
+
+    <nav class="tabs" role="tablist" aria-label="Chronicle sections">
+      <button class="tab" role="tab" data-panel="landing"  aria-selected="true">Previously On…</button>
+      <button class="tab" role="tab" data-panel="journal"  aria-selected="false">Journal</button>
+      <button class="tab" role="tab" data-panel="grimoire" aria-selected="false">Grimoire</button>
+    </nav>
+
+    <main>
+      <section id="panel-landing"  class="panel active" role="tabpanel" aria-label="Previously On"></section>
+      <section id="panel-journal"  class="panel"        role="tabpanel" aria-label="Journal"></section>
+      <section id="panel-grimoire" class="panel"        role="tabpanel" aria-label="Grimoire"></section>
+    </main>
+
+    <footer class="site-foot">
+      <div>Source-bound · no inference · nothing shown beyond your reading position</div>
+      <div>Build 07252026.1</div>
+    </footer>
+  </div>
+
+  <!-- Logic + surface modules load before app.js; app.js orchestrates last.
+       Added per implementation unit:
+         schema.js (U2) · position.js (U3) · journal.js (U4)
+         datacontrols.js (U5) · grimoire.js (U6) · recap.js (U7) -->
+  <script src="app.js"></script>
+</body>
+</html>

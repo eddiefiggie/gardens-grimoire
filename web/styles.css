@@ -1,0 +1,299 @@
+/* Gardens Grimoire — parchment reading companion
+   Clean, legible dark ink on a warm parchment ground. Single committed look. */
+
+:root {
+  --parchment:        #f4ecd8;
+  --parchment-deep:   #ece0c4;
+  --panel:            #fbf6e9;
+  --ink:              #2b2118;
+  --ink-soft:         #5c4b36;
+  --ink-faint:        #8a7657;
+  --accent:           #7c4a24;   /* burnt sienna */
+  --accent-soft:      #a9713f;
+  --rule:             #d8c7a0;
+  --rule-soft:        #e6d9ba;
+  --safe:             #4b6b3a;   /* cleared / cited green */
+  --hold:             #9a7d3f;   /* held-question amber */
+  --shadow:           rgba(60, 44, 24, 0.16);
+  --measure:          38rem;     /* comfortable reading width */
+  --radius:           7px;
+  --serif:            "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --hand:             "Bradley Hand", "Segoe Print", "Comic Sans MS", "Chalkboard SE", cursive;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--parchment);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  /* subtle fibrous parchment texture without external assets */
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.35) 0, transparent 55%),
+    radial-gradient(circle at 80% 0%, rgba(210,190,150,0.25) 0, transparent 45%);
+  min-height: 100vh;
+}
+
+.wrap {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 1.25rem 1.1rem 4rem;
+}
+
+/* ---------- Header ---------- */
+.site-head { text-align: center; padding-top: 1rem; }
+.site-head h1 {
+  font-size: 2rem;
+  letter-spacing: 0.02em;
+  margin: 0 0 0.15rem;
+  color: var(--accent);
+}
+.site-head .subtitle {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+.ornament { color: var(--accent-soft); letter-spacing: 0.5em; margin: 0.5rem 0 0; }
+
+/* ---------- Position marker ---------- */
+.marker-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin: 1.1rem 0 0.4rem;
+  flex-wrap: wrap;
+}
+.marker-label { font-size: 0.9rem; color: var(--ink-soft); }
+.marker-pos {
+  font-weight: 700;
+  color: var(--ink);
+  background: var(--panel);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 0.2rem 0.7rem;
+}
+.marker-book { font-size: 0.8rem; color: var(--ink-faint); display: block; text-align: center; margin-top: 0.15rem; }
+.nav-btn {
+  font-family: var(--serif);
+  font-size: 0.9rem;
+  color: var(--parchment);
+  background: var(--accent);
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.35rem 0.8rem;
+  cursor: pointer;
+  min-height: 2.2rem;
+}
+.nav-btn:hover { background: var(--accent-soft); }
+.nav-btn[disabled] { opacity: 0.4; cursor: default; }
+.nav-btn.secondary { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+
+/* ---------- Tabs ---------- */
+.tabs {
+  display: flex;
+  gap: 0.3rem;
+  justify-content: center;
+  margin: 1rem 0 1.4rem;
+  border-bottom: 2px solid var(--rule);
+  flex-wrap: wrap;
+}
+.tab {
+  font-family: var(--serif);
+  font-size: 1rem;
+  background: none;
+  border: none;
+  color: var(--ink-soft);
+  padding: 0.55rem 0.9rem;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  min-height: 2.6rem;
+}
+.tab:hover { color: var(--ink); }
+.tab[aria-selected="true"] {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  font-weight: 700;
+}
+
+.panel { display: none; }
+.panel.active { display: block; animation: fade 0.25s ease; }
+@keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+
+/* ---------- Generic states ---------- */
+.state {
+  text-align: center;
+  color: var(--ink-soft);
+  font-style: italic;
+  padding: 2.5rem 1rem;
+  border: 1px dashed var(--rule);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,0.25);
+}
+.state strong { color: var(--ink); font-style: normal; display: block; margin-bottom: 0.35rem; }
+.state.error { border-color: var(--accent-soft); color: var(--accent); }
+
+/* ---------- Entry cards ---------- */
+.entry {
+  background: var(--panel);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 0.9rem 1rem;
+  margin: 0 0 0.9rem;
+  box-shadow: 0 1px 2px var(--shadow);
+}
+.entry .meta {
+  font-size: 0.78rem;
+  color: var(--ink-faint);
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.4rem;
+}
+
+/* raw notes read like margin scrawl — informal, unfinished */
+.entry--raw {
+  background: repeating-linear-gradient(
+    var(--panel), var(--panel) 1.55rem, var(--rule-soft) 1.55rem, var(--rule-soft) 1.6rem);
+  border-left: 4px solid var(--hold);
+  font-family: var(--hand);
+  color: var(--ink-soft);
+}
+.entry--raw .tag-raw { color: var(--hold); font-weight: 700; }
+
+/* refined entries read like set, inscribed type */
+.entry--refined {
+  border-left: 4px solid var(--safe);
+}
+.entry--refined .cited {
+  color: var(--safe);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.03em;
+}
+.entry--refined .cite-src { color: var(--ink-faint); font-size: 0.72rem; }
+
+/* provenance disclosure */
+.provenance { margin-top: 0.5rem; }
+.provenance summary {
+  cursor: pointer;
+  font-size: 0.8rem;
+  color: var(--accent);
+  font-family: var(--serif);
+}
+.provenance .original {
+  margin-top: 0.35rem;
+  padding: 0.5rem 0.7rem;
+  font-family: var(--hand);
+  color: var(--ink-soft);
+  background: var(--rule-soft);
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+}
+
+/* ---------- Grimoire dossiers ---------- */
+.dossier { margin-bottom: 1.3rem; }
+.dossier h3 { margin: 0 0 0.2rem; color: var(--accent); font-size: 1.15rem; }
+.dossier .kind { font-size: 0.72rem; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.08em; }
+.layer {
+  border-left: 2px solid var(--rule);
+  padding: 0.25rem 0 0.25rem 0.8rem;
+  margin: 0.4rem 0 0.4rem 0.3rem;
+}
+.layer .as-of { font-size: 0.72rem; color: var(--ink-faint); }
+
+/* ---------- Held questions ---------- */
+.held-q { border-left: 4px solid var(--hold); }
+.held-q .status { color: var(--hold); font-size: 0.8rem; font-style: italic; }
+
+/* ---------- Newly knowable feed ---------- */
+.feed {
+  background: rgba(75, 107, 58, 0.08);
+  border: 1px solid var(--safe);
+  border-radius: var(--radius);
+  padding: 0.8rem 1rem;
+  margin-bottom: 1.4rem;
+}
+.feed h2 { margin: 0 0 0.5rem; font-size: 1rem; color: var(--safe); letter-spacing: 0.04em; }
+.feed ul { margin: 0; padding-left: 1.1rem; }
+
+/* ---------- Recap / Previously On ---------- */
+.recap-block { margin-bottom: 1.2rem; }
+.recap-block .recap-pos { font-size: 0.78rem; color: var(--ink-faint); }
+.noticed {
+  background: rgba(124, 74, 36, 0.06);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 0.7rem 0.9rem;
+  margin-top: 1rem;
+}
+.noticed h3 { margin: 0 0 0.4rem; font-size: 0.95rem; color: var(--accent); }
+
+/* ---------- Capture form ---------- */
+.capture { margin-bottom: 1.3rem; }
+.capture textarea {
+  width: 100%;
+  min-height: 4.5rem;
+  font-family: var(--serif);
+  font-size: 1rem;
+  padding: 0.6rem 0.7rem;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: var(--panel);
+  color: var(--ink);
+  resize: vertical;
+}
+.capture .row { display: flex; gap: 0.5rem; align-items: center; margin-top: 0.5rem; flex-wrap: wrap; }
+.capture select, .capture input[type="text"] {
+  font-family: var(--serif);
+  padding: 0.35rem 0.5rem;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: var(--panel);
+  color: var(--ink);
+}
+
+/* ---------- Data controls ---------- */
+.data-controls {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin: 1.4rem 0 0.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+}
+.data-controls .danger { border-color: var(--accent); color: var(--accent); }
+
+/* ---------- Footer ---------- */
+.site-foot {
+  text-align: center;
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.78rem;
+  color: var(--ink-faint);
+}
+
+/* ---------- Responsive: one-handed beside a book ---------- */
+@media (max-width: 600px) {
+  html, body { font-size: 17px; }
+  .wrap { padding: 1rem 0.85rem 3.5rem; }
+  .site-head h1 { font-size: 1.6rem; }
+  .tab { padding: 0.5rem 0.6rem; font-size: 0.95rem; }
+  .nav-btn, .tab { min-height: 44px; } /* comfortable touch targets */
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .panel.active { animation: none; }
+}

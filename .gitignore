@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+
+# Scratch / local
+_to_delete/
+*.log
+
+# Node (tests run with plain `node`; no deps, but ignore if any appear)
+node_modules/
