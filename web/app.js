@@ -80,6 +80,7 @@
       this.renderMarkerBar();
       if (window.Recap && Recap.render) Recap.render(this, byId("panel-landing"));
       if (window.Journal && Journal.render) Journal.render(this, byId("panel-journal"));
+      if (window.DataControls && DataControls.render) DataControls.render(this, byId("panel-journal"));
       if (window.Grimoire && Grimoire.render) Grimoire.render(this, byId("panel-grimoire"));
     },
 
@@ -163,6 +164,12 @@
     showLoading();
     loadData().then(function () {
       App.loadError = null;
+      // reconcile-on-load: repo refined entries are the source of truth,
+      // so drop any staged raw note whose id is now refined in journal.json.
+      if (window.DataControls && App.data.journal) {
+        App.staging = DataControls.reconcile(App.staging, App.data.journal.entries);
+        App.saveStaging();
+      }
       App._resolve();
       App.renderAll();
     }).catch(function (err) {
