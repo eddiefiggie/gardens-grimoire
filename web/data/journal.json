@@ -6,7 +6,7 @@
       "source": "Prologue", "provenance": "who's the kid on the wall at the very start?" },
 
     { "id": "nms1g06hqiy6d", "position": 0, "timestamp": 1785048863966, "refined": true,
-      "text": "The Prologue opens not with a book but with a poem — an epigraph titled 'Call to Shadow (I.i. 1-18),' credited to Felisin (b.1146) — followed by a dateline. The verse proclaims 'The Emperor is dead' and his right hand 'now cold, now severed.'",
+      "text": "The Prologue opens not with a book but with a poem — an epigraph titled 'Call to Shadow (I.i. 1-18),' credited to Felisin (b.1146) — set above a dateline. Its two stanzas mourn a dead Emperor twice over: 'The Emperor is dead! / So too his right hand — now cold, now severed,' and again 'his master'd companion, the rope cut clean.' Amid the funeral imagery — 'dying shadows, twinned and flowing bloody and beaten,' a 'burgeoning return,' 'obsidian eyes' — a number tolls: 'seven years this warmth has bled,' and later 'vengeance chimes seven times.'",
       "source": "Prologue", "provenance": "What was the opening sequence ages. Speaking about an old book? Book of the fallen?" },
 
     { "id": "nms1g1hfeawoi", "position": 0, "timestamp": 1785048924794, "refined": true,
@@ -18,7 +18,7 @@
       "source": "Prologue", "provenance": "1154th year of burns sleep. 96th year of the Malazan empire. Last year of the emperor Kallanved’s reign." },
 
     { "id": "nms1gndusfqob", "position": 0, "timestamp": 1785049946596, "refined": true,
-      "text": "The opening poem declares both the Emperor dead and 'his right hand — now cold, now severed,' and laments that 'seven years this warmth has bled.'",
+      "text": "Good catch — and there's more than one. The poem declares the Emperor dead and, with him, not one companion but two: 'his right hand — now cold, now severed,' and 'his master'd companion, the rope cut clean.' It laments that 'seven years this warmth has bled' — the first sounding of a 'seven' the verse returns to at its close ('vengeance chimes seven times').",
       "source": "Prologue", "provenance": "The emporer and his right hand…. Dead. 7 years this warmth has bled?" },
 
     { "id": "nms1gq3h66chj", "position": 0, "timestamp": 1785050073114, "refined": true,
@@ -47,7 +47,19 @@
 
     { "id": "nms1h3e6w6oun", "position": 0, "timestamp": 1785050693528, "refined": true,
       "text": "On the sorcery ban: Surly/Laseen has made laws against sorcery, and the commander warns they 'will not survive Kellanved's return.' The Prologue summary does not mention a tower or a troop-transport signal (kept as a held question).",
-      "source": "Prologue", "provenance": "Surly creates prohibition of sorcery. The tower signaled something about transport of troops… what’s the tower?" }
+      "source": "Prologue", "provenance": "Surly creates prohibition of sorcery. The tower signaled something about transport of troops… what’s the tower?" },
+
+    { "id": "nms1guxf6e7hm", "position": 0, "timestamp": 1785050298546, "refined": true,
+      "text": "Two things here need untangling. The Prologue does name the First Sword — Dassem Ultor, who died at Y'Ghatan — but it does not, at this point, define 'Seven Cities' or place any unit (a '3rd') at his side; those stay open (see your held questions). So what's solid is the death and where it happened; the rest is not yet on the page for your position.",
+      "source": "Prologue", "provenance": "The 3rd was with the first sword…. What is seven cities? Referenced a few times." },
+
+    { "id": "nms1gvn2s46h6", "position": 0, "timestamp": 1785050331796, "refined": true,
+      "text": "Not in the Prologue — a correction worth making. The Prologue relates that Dassem Ultor, the First Sword, died at Y'Ghatan, but it says nothing here about him betraying a god. Rather than invent an answer, I've kept 'did the First Sword betray a god?' as an open question that will surface if a later chapter addresses it.",
+      "source": "Prologue", "provenance": "It was said the first sword betrayed a god?" },
+
+    { "id": "nms1h7l8e1les", "position": 0, "timestamp": 1785050889278, "refined": true,
+      "text": "You've caught the Prologue's whole cast: Ganoes Paran (the boy on the wall); the commander of the Bridgeburners (the Prologue calls him exactly that — not 'the 3rd'); the second Bridgeburner with the fiddle on his back; Surly, now taking the name Laseen; and her Claw acolytes. And yes — this is where the Prologue ends. Whether any of them return is kept as a held question, since answering it would mean reading past where you are.",
+      "source": "Prologue", "provenance": "So the boy, that officer in the 3rd army, the soldier with the fiddle… surly and then the guards.. called the claw. Let me know if these characters will be further developed. \n\nThis is where the prologues ends." }
   ],
   "questions": [
     { "id": "seed-q-p0", "position": 0, "text": "Will Kellanved really return, as the commander implies?",
