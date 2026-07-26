@@ -3,10 +3,62 @@
   "entries": [
     { "id": "seed-p0-a", "position": 0, "timestamp": 1690000000000, "refined": true,
       "text": "Ganoes Paran — twelve years old; while his father discusses trade at Mock's Hold, he stands on the wall and tells the Bridgeburner commander he means to become a soldier.",
-      "source": "Prologue", "provenance": "who's the kid on the wall at the very start?" }
+      "source": "Prologue", "provenance": "who's the kid on the wall at the very start?" },
+
+    { "id": "nms1g06hqiy6d", "position": 0, "timestamp": 1785048863966, "refined": true,
+      "text": "The Prologue opens not with a book but with a poem — an epigraph titled 'Call to Shadow (I.i. 1-18),' credited to Felisin (b.1146) — followed by a dateline. The verse proclaims 'The Emperor is dead' and his right hand 'now cold, now severed.'",
+      "source": "Prologue", "provenance": "What was the opening sequence ages. Speaking about an old book? Book of the fallen?" },
+
+    { "id": "nms1g1hfeawoi", "position": 0, "timestamp": 1785048924794, "refined": true,
+      "text": "Yes — the opening epigraph declares 'The Emperor is dead,' and the dateline names this 'the Last Year of Emperor Kellanved's Reign.' Note the tension the Prologue sets up: the Bridgeburner commander nonetheless speaks of 'Kellanved's return' as something still to come.",
+      "source": "Prologue", "provenance": "The emperor is dead?" },
+
+    { "id": "nms1gd2mtlbfx", "position": 0, "timestamp": 1785049465493, "refined": true,
+      "text": "Confirmed — the Prologue is dated the 1154th Year of Burn's Sleep, the 96th Year of the Malazan Empire, and the Last Year of Emperor Kellanved's Reign. (The Emperor's name is spelled Kellanved.)",
+      "source": "Prologue", "provenance": "1154th year of burns sleep. 96th year of the Malazan empire. Last year of the emperor Kallanved’s reign." },
+
+    { "id": "nms1gndusfqob", "position": 0, "timestamp": 1785049946596, "refined": true,
+      "text": "The opening poem declares both the Emperor dead and 'his right hand — now cold, now severed,' and laments that 'seven years this warmth has bled.'",
+      "source": "Prologue", "provenance": "The emporer and his right hand…. Dead. 7 years this warmth has bled?" },
+
+    { "id": "nms1gq3h66chj", "position": 0, "timestamp": 1785050073114, "refined": true,
+      "text": "The keep is Mock's Hold, a hold above Malaz City. Twelve-year-old Ganoes Paran stands on its wall overlooking the Mouse Quarter while his father, within, discusses trade with the Fist who runs Mock's Hold. (The name is Ganoes Paran.)",
+      "source": "Prologue", "provenance": "Mocks vein. A hold in the city. Columns of smoke over the mouse quarter. Mocks hold is the name. Ganoes Palau…. City or the hold is a fists holding?" },
+
+    { "id": "nms1grd9sghvc", "position": 0, "timestamp": 1785050132464, "refined": true,
+      "text": "The seat the Fist commands is Mock's Hold — the Prologue names no 'citadel.' The trouble in the Mouse Quarter is a purge: the Bridgeburner commander is ordered to 'contain the problem in Mouse.'",
+      "source": "Prologue", "provenance": "Where is the citadel? That’s where the fist lives. Riots running in the mouse." },
+
+    { "id": "nms1gu6zxf5pm", "position": 0, "timestamp": 1785050264301, "refined": true,
+      "text": "The city is Malaz City. The man Ganoes speaks with is an unnamed commander of the Bridgeburners. And the First Sword you asked after is Dassem Ultor — the Prologue relates that the empire's First Sword died at the city of Y'Ghatan.",
+      "source": "Prologue", "provenance": "City name? It’s in a river…. And there’s a harbor. Magery can be heard…. A battle in the city.\n\nThe guy Ganoes is talking to…. He important? A commander in the 3rd…. Bridge burner. Bro he signifies this. Island of  Malaz.\n\nGanoes asked that the first sword of the empire is dead. What was his name?" },
+
+    { "id": "nms1gwwheghmz", "position": 0, "timestamp": 1785050390642, "refined": true,
+      "text": "The Prologue describes him only as a second Bridgeburner with a fiddle on his back, who joins the commander in discussing the Mouse Quarter purge and Surly's renaming to Laseen. It does not give his name here (whether these figures recur is tracked as one of your held questions).",
+      "source": "Prologue", "provenance": "Who was the bridge burner with a fiddle? Important? Pocked face short sword…" },
+
+    { "id": "nms1h0oqae12k", "position": 0, "timestamp": 1785050567218, "refined": true,
+      "text": "Surly has taken the name Laseen — which, as Ganoes notes, means 'Thronemaster' in the Napan tongue. She appears flanked by Claw acolytes, who serve as her guard.",
+      "source": "Prologue", "provenance": "Surly seems she’s among the 3rd? Laseen… Napan word. Throne master. Grey robe… thin features. Her guard… good shadowing faves hands in sleeves. These guards were claws." },
+
+    { "id": "nms1h2b9ac0a4", "position": 0, "timestamp": 1785050643070, "refined": true,
+      "text": "The Prologue shows Surly (Laseen) flanked by Claw acolytes — they attend her as her guard. It does not state here that she created the Claw.",
+      "source": "Prologue", "provenance": "Surly created the claw. Very strong." },
+
+    { "id": "nms1h3e6w6oun", "position": 0, "timestamp": 1785050693528, "refined": true,
+      "text": "On the sorcery ban: Surly/Laseen has made laws against sorcery, and the commander warns they 'will not survive Kellanved's return.' The Prologue summary does not mention a tower or a troop-transport signal (kept as a held question).",
+      "source": "Prologue", "provenance": "Surly creates prohibition of sorcery. The tower signaled something about transport of troops… what’s the tower?" }
   ],
   "questions": [
     { "id": "seed-q-p0", "position": 0, "text": "Will Kellanved really return, as the commander implies?",
+      "unlocksAt": null },
+    { "id": "q-p0-seven-cities", "position": 0, "text": "What is Seven Cities, referenced in these early pages?",
+      "unlocksAt": null },
+    { "id": "q-p0-first-sword-god", "position": 0, "text": "Did the First Sword, Dassem Ultor, betray a god?",
+      "unlocksAt": null },
+    { "id": "q-p0-tower", "position": 0, "text": "What is the tower that signalled something about the transport of troops?",
+      "unlocksAt": null },
+    { "id": "q-p0-characters-recur", "position": 0, "text": "Will these Prologue figures — Ganoes Paran, the Bridgeburner commander, the fiddle-bearing Bridgeburner, Laseen, and the Claw — appear again and be developed?",
       "unlocksAt": null }
   ]
 }
